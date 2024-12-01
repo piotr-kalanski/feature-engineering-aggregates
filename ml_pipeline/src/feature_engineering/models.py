@@ -33,6 +33,7 @@ class RatioMetric(Metric):
   nominator_column: str
   denominator_column: str
 
+@dataclass
 class PartitionKeys:
   short_name: str
   columns: List[str]

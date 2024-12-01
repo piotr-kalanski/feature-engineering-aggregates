@@ -1,6 +1,7 @@
 from typing import List, Dict
 
-from kedro.pipeline import Pipeline, node, Node
+from kedro.pipeline import Pipeline, node
+from kedro.pipeline.node import Node
 
 from feature_engineering.models import AggregationsConfig, PartitionKeys, AggregateConfig, FeatureView
 from feature_engineering.feature_store.fake import FakeFeatureStore
@@ -65,7 +66,7 @@ def create_aggregate_node(agg_config: AggregateConfig, temp_table_name: str) -> 
 def create_merge_node(partition: PartitionKeys) -> Node:
   return node(
     func=lambda: execution_engine.merge(partition),
-    inputs=None,
+    inputs=None, # TODO - add inputs from each aggregate node
     outputs=f"merged_table_{partition.short_name}",
     name=f"merge_{partition.short_name}"
   )
