@@ -21,7 +21,7 @@ def config_loader():
 @pytest.fixture
 def project_context(config_loader):
     return KedroContext(
-        package_name="kedro",
+        package_name="feature_engineering",
         project_path=Path.cwd(),
         env="local",
         config_loader=config_loader,

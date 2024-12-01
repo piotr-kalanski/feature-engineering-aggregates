@@ -1,5 +1,5 @@
-"""kedro file for ensuring the package is executable
-as `kedro` and `python -m kedro`
+"""feature_engineering file for ensuring the package is executable
+as `feature-engineering` and `python -m feature_engineering`
 """
 import sys
 from pathlib import Path

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 requires-python = ">=3.9"
-name = "kedro"
+name = "feature_engineering"
 readme = "README.md"
 dynamic = ["version"]
 dependencies = [
@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-"kedro" = "kedro.__main__:main"
+"feature-engineering" = "feature_engineering.__main__:main"
 
 [project.entry-points."kedro.hooks"]
 
@@ -43,15 +43,15 @@ dev = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "kedro.__version__"}
+version = {attr = "feature_engineering.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
 namespaces = false
 
 [tool.kedro]
-package_name = "kedro"
-project_name = "kedro"
+package_name = "feature_engineering"
+project_name = "feature_engineering"
 kedro_init_version = "0.19.10"
 tools = "['Linting', 'Testing', 'Custom Logging', 'Documentation', 'Data Structure', 'Kedro Viz']"
 example_pipeline = "False"
@@ -60,7 +60,7 @@ source_dir = "src"
 [tool.pytest.ini_options]
 addopts = """
 --cov-report term-missing \
---cov src/kedro -ra"""
+--cov src/feature_engineering -ra"""
 
 [tool.coverage.report]
 fail_under = 0
@@ -85,4 +85,4 @@ select = [
 ignore = ["E501"]  # Ruff format takes care of line-too-long
 
 [tool.kedro_telemetry]
-project_id = "d314af75586f49b5ac89405decb94c00"
+project_id = "e7f634d32db046ec8213ef1d7043dfa8"
